@@ -7,6 +7,18 @@ What the package supported ?
 - Yml metadata mapping
 - Some extensions for DQL query like 'acos, sin, degrees, ...'
 
+## configuration
+
+"jeanbelhache/doctrine2-l5": "dev-master",
+
+in config/app:
+
+'Doctrine2l5\Doctrine2CacheServiceProvider',
+'Doctrine2l5\Doctrine2ServiceProvider',
+
+
+./artisan vendor:publish --provider "Doctrine2l5\Doctrine2CacheServiceProvider"
+./artisan vendor:publish --provider "Doctrine2l5\Doctrine2ServiceProvider"
 
 ## License
 
