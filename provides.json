@@ -1,0 +1,10 @@
+{
+  "providers": [
+    "Doctrine2l5\Doctrine2CacheBridgeServiceProvider",
+    "Doctrine2l5\Doctrine2BridgeServiceProvider"
+  ]
+  // aliases are set uo automatically by the service providers as follows:
+  //
+  // D2Cache -> Doctrine2Bridge\Support\Facades\Doctrine2Cache
+  // D2EM    -> Doctrine2Bridge\Support\Facades\Doctrine2
+}
