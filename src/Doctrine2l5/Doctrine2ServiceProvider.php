@@ -193,7 +193,7 @@ class Doctrine2ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         Auth::extend( 'doctrine2l5', function() {
             return new \Illuminate\Auth\Guard(
-                new \Doctrine2\Auth\Doctrine2UserProvider(
+                new \Doctrine2l5\Auth\Doctrine2UserProvider(
                     \D2EM::getRepository( Config::get( 'd2doctrine.auth.entity' ) ),
                     new \Illuminate\Hashing\BcryptHasher
                 ),
