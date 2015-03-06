@@ -1,5 +1,7 @@
 # Doctrine 2 for Laravel 5
 
+[![Join the chat at https://gitter.im/jeanbelhache/doctrine2-l5](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jeanbelhache/doctrine2-l5?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 What the package supported ?
 
 - Doctrine2
