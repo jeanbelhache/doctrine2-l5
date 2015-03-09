@@ -17,14 +17,14 @@ return [
 
     // Paths for models, proxies, repositories, etc.
     'paths' => [
-        'models'       => app()->databasePath(),                // entity namespace added by default
+        'models'       => app()->databasePath(),
         'proxies'      => app()->databasePath() . '/Proxies',
-        'repositories' => app()->databasePath(),                // repository namespace added by default
-        'yml_schema'   => app()->databasePath() . '/yml'
+        'repositories' => app()->databasePath() . '/Repositories',
+        'yml_schema'   => app()->databasePath() . '/yml',
     ],
 
     // set to true to have Doctrine2 generate proxies on the fly. Not recommended in a production system.
-    'autogen_proxies'        => env('APP_DEBUG'),
+    'autogen_proxies'        => false,
 
     // Namespaces for entities, proxies and repositories.
     'namespaces' => [

@@ -74,7 +74,7 @@ class Proxies extends LaravelCommand
             return -1;
         }
 
-        $directory = Config::get( 'd2bdoctrine.paths.proxies' );
+        $directory = Config::get( 'd2doctrine.paths.proxies' );
 
         if( !$directory ) {
             $this->error('The proxy directory has not been set.');
