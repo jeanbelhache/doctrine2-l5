@@ -6,7 +6,7 @@ What the package supported ?
 
 - Doctrine2
 - Laravel Authentication
-- Yml metadata mapping
+- Annotations Driver
 - Some extensions for DQL query like 'acos, sin, degrees, ...'
 
 ## configuration
@@ -15,12 +15,15 @@ What the package supported ?
 
 in config/app:
 
+<pre>
 'Doctrine2l5\Doctrine2CacheServiceProvider',
 'Doctrine2l5\Doctrine2ServiceProvider',
+</pre>
 
-
+<pre>
 ./artisan vendor:publish --provider "Doctrine2l5\Doctrine2CacheServiceProvider"
 ./artisan vendor:publish --provider "Doctrine2l5\Doctrine2ServiceProvider"
+</pre>
 
 ## License
 
