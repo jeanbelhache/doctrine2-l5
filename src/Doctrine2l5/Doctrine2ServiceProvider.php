@@ -7,9 +7,14 @@ use Config;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityManager;
-use Doctrine\Common\Cache\Cache;
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use Doctrine\Common\Cache\Cache;
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
+use Doctrine\ORM\Configuration;
+use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ORM\Mapping\ClassMetadataFactory;
+// use Doctrine\ORM\Mapping\Driver\YamlDriver;
 
 use Doctrine2l5\EventListeners\TablePrefix;
 use Doctrine2l5\Support\Repository as D2Repository;
@@ -86,15 +91,25 @@ class Doctrine2ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     private function registerEntityManager()
     {
+        // $driverImpl = $config->newDefaultAnnotationDriver($paths);
+        // $dconfig->setMetadataDriverImpl($driverImpl);
+        // $driver = new YamlDriver(
+        //     array( Config::get( 'd2doctrine.paths.yml_schema' ) )
+        // );
+        // $dconfig->setMetadataDriverImpl( $driver );
+
         $this->app->singleton( EntityManagerInterface::class, function( $app ) {
 
-            $dconfig = new \Doctrine\ORM\Configuration;
+            $paths = [app()->databasePath().'/Entities'];
+            $annotations_path = base_path().'/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php';
 
-            $driver = new \Doctrine\ORM\Mapping\Driver\YamlDriver(
-                array( Config::get( 'd2doctrine.paths.yml_schema' ) )
-            );
+            AnnotationRegistry::registerFile($annotations_path);
 
-            $dconfig->setMetadataDriverImpl( $driver );
+            $dconfig        = new Configuration();
+            $reader         = new AnnotationReader();
+            $driverImpl     = new AnnotationDriver($reader, $paths);
+
+            $dconfig->setMetadataDriverImpl($driverImpl);
 
             $dconfig->setProxyDir(                 Config::get( 'd2doctrine.paths.proxies'      ) );
             $dconfig->setProxyNamespace(           Config::get( 'd2doctrine.namespaces.proxies' ) );
