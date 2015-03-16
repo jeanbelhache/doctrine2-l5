@@ -91,8 +91,7 @@ class Doctrine2ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     private function registerEntityManager()
     {
-        // $driverImpl = $config->newDefaultAnnotationDriver($paths);
-        // $dconfig->setMetadataDriverImpl($driverImpl);
+        
         // $driver = new YamlDriver(
         //     array( Config::get( 'd2doctrine.paths.yml_schema' ) )
         // );
@@ -100,7 +99,7 @@ class Doctrine2ServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $this->app->singleton( EntityManagerInterface::class, function( $app ) {
 
-            $paths = [app()->databasePath().'/Entities'];
+            $paths = [ app()->databasePath().'/Entities' ];
             $annotations_path = base_path().'/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php';
 
             AnnotationRegistry::registerFile($annotations_path);
