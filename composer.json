@@ -1,8 +1,8 @@
 {
     "name": "jeanbelhache/doctrine2-l5",
-    "description": "Doctrine 2 for Laravel 5 with Yml Mapping and d2 extensions",
+    "description": "Doctrine 2 for Laravel 5 with Annotations drivers and d2 extensions",
     "homepage": "https://github.com/jeanbelhache/doctrine2-l5",
-    "keywords": [ "laravel", "doctrine2", "auth", "extensions" ],
+    "keywords": [ "laravel", "doctrine2", "auth", "extensions", "annotations"],
     "license": "MIT",
     "authors": [
         {
