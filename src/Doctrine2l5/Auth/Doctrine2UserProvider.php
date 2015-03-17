@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Doctrine2 Bridge - Brings Doctrine2 to Laravel 5.
+ * jeanbelhache/doctrine2-l5 - Brings Doctrine2 to Laravel 5.
  *
- * @author Barry O'Donovan <barry@opensolutions.ie>
- * @copyright Copyright (c) 2015 Open Source Solutions Limited
+ * @author Jean Belhache <jeanbelhache@gmail.com>
+ * @copyright Copyright (c) 2015 Belle EURL
  * @license MIT
  */
 

@@ -14,12 +14,9 @@ use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Configuration;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ORM\Mapping\ClassMetadataFactory;
-// use Doctrine\ORM\Mapping\Driver\YamlDriver;
 
 use Doctrine2l5\EventListeners\TablePrefix;
 use Doctrine2l5\Support\Repository as D2Repository;
-
-use Da\Query\Acos;
 
 /**
  * jeanbelhache/doctrine2-l5 - Brings Doctrine2 to Laravel 5.
@@ -91,15 +88,9 @@ class Doctrine2ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     private function registerEntityManager()
     {
-        
-        // $driver = new YamlDriver(
-        //     array( Config::get( 'd2doctrine.paths.yml_schema' ) )
-        // );
-        // $dconfig->setMetadataDriverImpl( $driver );
-
         $this->app->singleton( EntityManagerInterface::class, function( $app ) {
 
-            $paths = [ app()->databasePath().'/Entities' ];
+            $paths = [ Config::get('d2doctrine.paths.entities') ];
             $annotations_path = base_path().'/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php';
 
             AnnotationRegistry::registerFile($annotations_path);

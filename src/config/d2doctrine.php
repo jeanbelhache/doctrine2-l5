@@ -17,20 +17,19 @@ return [
 
     // Paths for models, proxies, repositories, etc.
     'paths' => [
-        'models'       => app()->databasePath(),
+        'entities'     => app()->databasePath() . '/Entities',
         'proxies'      => app()->databasePath() . '/Proxies',
-        'repositories' => app()->databasePath() . '/Repositories',
-        'yml_schema'   => app()->databasePath() . '/yml',
+        'repositories' => app()->databasePath() . '/Repositories'
     ],
 
     // set to true to have Doctrine2 generate proxies on the fly. Not recommended in a production system.
-    'autogen_proxies'        => false,
+    'autogen_proxies'       => FALSE,
 
     // Namespaces for entities, proxies and repositories.
     'namespaces' => [
-        'models'       => 'Entities',
-        'proxies'      => 'Proxies',
-        'repositories' => 'Repositories'
+        'entities'          => 'Entities',
+        'proxies'           => 'Proxies',
+        'repositories'      => 'Repositories'
     ],
 
     // Doctrine2 includes an implementation of Doctrine\DBAL\Logging\SQLLogger which
@@ -43,7 +42,7 @@ return [
 
     // use Doctrine2 with Laravel's authentication menchanism
     'auth' => [
-        'enabled' => true,
+        'enabled' => FALSE,
         'entity'  => '\Entities\User'   // the Doctrine2 entity representing the user
     ]
 ];

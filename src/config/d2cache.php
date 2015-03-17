@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Doctrine2j5 :: Cache Configuration
+| Doctrine2l5 :: Cache Configuration
 |--------------------------------------------------------------------------
 |
 | See: https://github.com/jeanbelhache/doctrine2-l5
