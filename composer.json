@@ -16,6 +16,7 @@
         "issues": "https://github.com/jeanbelhache/doctrine2-l5/issues",
         "source": "https://github.com/jeanbelhache/doctrine2-l5"
     },
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.5.0",
         "doctrine/orm": ">=2.4.0"
