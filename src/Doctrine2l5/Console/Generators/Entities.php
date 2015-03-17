@@ -69,7 +69,7 @@ class Entities extends LaravelCommand
             return -1;
         }
 
-        $directory = Config::get( 'd2doctrine.paths.models' );
+        $directory = Config::get( 'd2doctrine.paths.entities' );
 
         if( !$directory ) {
             $this->error('The entity directory has not been set.');
