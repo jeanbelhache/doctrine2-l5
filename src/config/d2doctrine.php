@@ -20,6 +20,7 @@ return [
         'entities'     => app()->databasePath() . '/Entities',
         'proxies'      => app()->databasePath() . '/Proxies',
         'repositories' => app()->databasePath() . '/Repositories'
+        'yml'          => app()->databasePath() . '/Yml'
     ],
 
     // set to true to have Doctrine2 generate proxies on the fly. Not recommended in a production system.
