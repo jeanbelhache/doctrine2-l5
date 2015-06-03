@@ -19,7 +19,7 @@ return [
     'paths' => [
         'entities'     => app()->databasePath() . '/Entities',
         'proxies'      => app()->databasePath() . '/Proxies',
-        'repositories' => app()->databasePath() . '/Repositories'
+        'repositories' => app()->databasePath() . '/Repositories',
         'yml'          => app()->databasePath() . '/Yml'
     ],
 
