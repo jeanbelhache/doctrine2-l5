@@ -124,6 +124,24 @@ class Doctrine2ServiceProvider extends \Illuminate\Support\ServiceProvider
             return EntityManager::create( $lconfig, $dconfig );
         });
 
+        // $this->app->singleton( EntityManagerInterface::class, function( $app ) {
+        //     $dconfig = new \Doctrine\ORM\Configuration;
+        //     $driver = new \Doctrine\ORM\Mapping\Driver\YamlDriver(
+        //         array( Config::get( 'd2doctrine.paths.yml' ) )
+        //     );
+        //     $dconfig->setMetadataDriverImpl( $driver );
+        //     $dconfig->setProxyDir(                 Config::get( 'd2doctrine.paths.proxies'      ) );
+        //     $dconfig->setProxyNamespace(           Config::get( 'd2doctrine.namespaces.proxies' ) );
+        //     $dconfig->setAutoGenerateProxyClasses( Config::get( 'd2doctrine.autogen_proxies'    ) );
+        //     $lconfig = $this->laravelToDoctrineConfigMapper();
+        //     //load prefix listener
+        //     if( isset($lconfig['prefix']) && $lconfig['prefix'] && $lconfig['prefix'] !== '' ) {
+        //         $tablePrefix = new TablePrefix( $lconfig['prefix']);
+        //         $eventManager->addEventListener(Events::loadClassMetadata, $tablePrefix);
+        //     }
+        //     return EntityManager::create( $lconfig, $dconfig );
+        // });
+
     }
 
     /**
